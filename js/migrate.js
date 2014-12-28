@@ -1,17 +1,18 @@
 const path = require('path');
+const fs = require('fs');
 
-const dbFile = './fantasy.db';
-const schemaFile = './schema.sql';
-const dataFile = './data';
+const dbFile = path.join(__dirname, '..', 'fantasy.db');
+const schemaFile = path.join(__dirname, '..', 'schema.sql');
+const dataFile = path.join(__dirname, '..', 'data');
 
-const dbPath = path.join(__dirname, dbFile);
-
-require('rimraf').sync(dbPath);
+try {
+  fs.unlinkSync(dbFile);
+} catch (e) {}
 
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database(dbPath);
+const db = new sqlite3.Database(dbFile);
 
-const schema = require('fs').readFileSync(schemaFile, 'utf-8');
+const schema = fs.readFileSync(schemaFile, 'utf-8');
 const data = require(dataFile);
 
 console.log('creating database...');
@@ -25,11 +26,11 @@ db.serialize(function () {
       var columns = Object.keys(row);
       var values = columns.map(function (column) { return row[column]; });
       var sql = [
-        'INSERT INTO',
-        table,
-        '('+columns.join(',')+')',
-        'VALUES',
-        '(?'+new Array(columns.length).join(',?')+')'
+      'INSERT INTO',
+      table,
+      '('+columns.join(',')+')',
+      'VALUES',
+      '(?'+new Array(columns.length).join(',?')+')'
       ].join(' ');
       db.run(sql, values);
     });

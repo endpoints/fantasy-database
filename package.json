@@ -8,7 +8,7 @@
     "url": "http://goingslowly.com/"
   },
   "scripts": {
-    "start": "node index"
+    "start": "node js/migrate"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
     "test database"
   ],
   "devDependencies": {
+    "bookshelf": "^0.7.9",
+    "knex": "^0.7.3",
     "rimraf": "^2.2.8",
     "sqlite3": "^3.0.4"
   }
