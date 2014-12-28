@@ -1,0 +1,33 @@
+{
+  "name": "fantasy-database",
+  "description": "A database with a few fantasy books in it for testing query builders, orms, rest frameworks, etc.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/tkellen/fantasy-database",
+  "author": {
+    "name": "Tyler Kellen",
+    "url": "http://goingslowly.com/"
+  },
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tkellen/fantasy-database.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tkellen/fantasy-database/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tkellen/fantasy-database/blob/master/LICENSE"
+    }
+  ],
+  "keywords": [
+    "test database"
+  ],
+  "devDependencies": {
+    "rimraf": "^2.2.8",
+    "sqlite3": "^3.0.4"
+  }
+}
