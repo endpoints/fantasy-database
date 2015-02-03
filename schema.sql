@@ -24,3 +24,13 @@ CREATE TABLE chapters (
   title text NOT NULL CHECK(title <> ''),
   ordering integer NOT NULL
 );
+
+CREATE TABLE stores (
+  id integer PRIMARY KEY,
+  name text NOT NULL CHECK(name <> '')
+);
+
+CREATE TABLE books_stores (
+  book_id integer NOT NULL REFERENCES books(id),
+  store_id integer NOT NULL REFERENCES stores(id)
+);

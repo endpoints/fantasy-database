@@ -17,7 +17,8 @@
     { "id": 7, "series_id": 2, "author_id": 2, "title": "Harry Potter and the Goblet of Fire", "date_published": "2000-07-08" },
     { "id": 8, "series_id": 2, "author_id": 2, "title": "Harry Potter and the Order of the Phoenix", "date_published": "2003-06-21" },
     { "id": 9, "series_id": 2, "author_id": 2, "title": "Harry Potter and the Half-Blood Prince", "date_published": "2005-07-16" },
-    { "id": 10, "series_id": 2, "author_id": 2, "title": "Harry Potter and the Deathly Hallows", "date_published": "2007-07-21" }
+    { "id": 10, "series_id": 2, "author_id": 2, "title": "Harry Potter and the Deathly Hallows", "date_published": "2007-07-21" },
+    { "id": 11, "series_id": null, "author_id": 1, "title": "The Hobbit", "date_published": "1937-09-21" }
   ],
   "chapters": [
     { "id": 1, "title": "A Long-expected Party", "book_id": 1, "ordering": 1 },
@@ -279,6 +280,43 @@
     { "id": 257, "title": "The Prince's Tale", "book_id": 10, "ordering": 33 },
     { "id": 258, "title": "The Forest Again", "book_id": 10, "ordering": 34 },
     { "id": 259, "title": "King's Cross", "book_id": 10, "ordering": 35 },
-    { "id": 260, "title": "The Flaw in the Plan", "book_id": 10, "ordering": 36 }
+    { "id": 260, "title": "The Flaw in the Plan", "book_id": 10, "ordering": 36 },
+    { "id": 271, "title": "An Unexpected Party", "book_id": 11, "ordering": 1 },
+    { "id": 272, "title": "Roast Mutton", "book_id": 11, "ordering": 2 },
+    { "id": 273, "title": "A Short Rest", "book_id": 11, "ordering": 3 },
+    { "id": 274, "title": "Over Hill And Under Hill", "book_id": 11, "ordering": 4 },
+    { "id": 275, "title": "Riddles In The Dark", "book_id": 11, "ordering": 5 },
+    { "id": 276, "title": "Out Of The Frying-Pan Into The Fire", "book_id": 11, "ordering": 6 },
+    { "id": 277, "title": "Queer Lodgings", "book_id": 11, "ordering": 7 },
+    { "id": 278, "title": "Flies And Spiders", "book_id": 11, "ordering": 8 },
+    { "id": 279, "title": "Barrels Out Of Bond", "book_id": 11, "ordering": 9 },
+    { "id": 280, "title": "A Warm Welcome", "book_id": 11, "ordering": 10 },
+    { "id": 281, "title": "On The Doorstep", "book_id": 11, "ordering": 11 },
+    { "id": 282, "title": "Inside Information", "book_id": 11, "ordering": 12 },
+    { "id": 283, "title": "Not At Home", "book_id": 11, "ordering": 13 },
+    { "id": 284, "title": "Fire And Water", "book_id": 11, "ordering": 14 },
+    { "id": 285, "title": "The Gathering Of The Clouds", "book_id": 11, "ordering": 15 },
+    { "id": 286, "title": "A Thief In The Night", "book_id": 11, "ordering": 16 },
+    { "id": 287, "title": "The Clouds Burst", "book_id": 11, "ordering": 17 },
+    { "id": 288, "title": "The Return Journey", "book_id": 11, "ordering": 18 },
+    { "id": 289, "title": "The Last Stage", "book_id": 11, "ordering": 19 }
+  ],
+  "stores": [
+    { "id": 1, "name": "empty store" },
+    { "id": 2, "name": "full store" }
+  ],
+  "books_stores": [
+    { "store_id": 2, "book_id": 1 },
+    { "store_id": 2, "book_id": 2 },
+    { "store_id": 2, "book_id": 3 },
+    { "store_id": 2, "book_id": 4 },
+    { "store_id": 2, "book_id": 5 },
+    { "store_id": 2, "book_id": 5 },
+    { "store_id": 2, "book_id": 6 },
+    { "store_id": 2, "book_id": 7 },
+    { "store_id": 2, "book_id": 8 },
+    { "store_id": 2, "book_id": 9 },
+    { "store_id": 2, "book_id": 10 },
+    { "store_id": 2, "book_id": 11 }
   ]
 }
