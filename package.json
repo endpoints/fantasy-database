@@ -1,16 +1,17 @@
 {
   "name": "fantasy-database",
-  "description": "A database with a few fantasy books in it for testing query builders, orms, rest frameworks, etc.",
-  "version": "1.1.0",
+  "description": "A mock database used for testing query builders, orms, api frameworks, etc.",
+  "version": "2.0.0",
   "homepage": "https://github.com/tkellen/fantasy-database",
   "author": {
     "name": "Tyler Kellen",
     "url": "http://goingslowly.com/"
   },
   "scripts": {
-    "start": "node js/migrate"
+    "build": "node js/build",
+    "test": "node examples/bookshelf"
   },
-  "main": "data.json",
+  "main": "js/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/tkellen/fantasy-database.git"
@@ -27,9 +28,12 @@
   "keywords": [
     "test database"
   ],
+  "dependencies": {
+    "require-dir": "^0.1.0",
+    "sqlite3": "3.0.4"
+  },
   "devDependencies": {
     "bookshelf": "0.7.9",
-    "knex": "0.7.3",
-    "sqlite3": "3.0.4"
+    "knex": "0.7.3"
   }
 }
