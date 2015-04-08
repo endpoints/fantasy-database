@@ -4,8 +4,8 @@
     { "id": 2, "name": "J. K. Rowling", "date_of_birth": "1965-07-31", "date_of_death": null }
   ],
   "series": [
-    { "id": 1, "title": "The Lord of the Rings" },
-    { "id": 2, "title": "Harry Potter" }
+    { "id": 1, "title": "The Lord of the Rings", "photo_id": 16 },
+    { "id": 2, "title": "Harry Potter", "photo_id": 17 }
   ],
   "books": [
     { "id": 1, "series_id": 1, "author_id": 1, "title": "The Fellowship of the Ring", "date_published": "1954-07-29" },
@@ -318,5 +318,24 @@
     { "store_id": 2, "book_id": 9 },
     { "store_id": 2, "book_id": 10 },
     { "store_id": 2, "book_id": 11 }
+  ],
+  "photos": [
+    { "id": 1, "imageable_id": 1, "imageable_type": "authors", "title": "J. R. R. Tolkein", "uri": "http://upload.wikimedia.org/wikipedia/commons/b/b4/Tolkien_1916.jpg" },
+    { "id": 2, "imageable_id": 1, "imageable_type": "authors", "title": "Family Postcard of J. R. R. Tolkein", "uri": "http://upload.wikimedia.org/wikipedia/commons/5/5b/Mabel_Suffield_Christmas_Card.jpg" },
+    { "id": 3, "imageable_id": 2, "imageable_type": "authors", "title": "J. K. Rowling", "uri": "http://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg" },
+    { "id": 4, "imageable_id": 2, "imageable_type": "authors", "title": "J. K. Rowling's Childhood Home", "uri": "http://upload.wikimedia.org/wikipedia/commons/e/e7/Church_Cottage%2C_Tutshill.jpg" },
+    { "id": 5, "imageable_id": 1, "imageable_type": "books", "title": "The Fellowship of the Ring", "uri": "http://upload.wikimedia.org/wikipedia/en/7/7e/FellowshipOfTheRing.JPG" },
+    { "id": 6, "imageable_id": 2, "imageable_type": "books", "title": "The Two Towers", "uri": "http://upload.wikimedia.org/wikipedia/en/2/2f/The_Two_Towers_%28novel%29_-1st_edition_cover.JPG" },
+    { "id": 7, "imageable_id": 3, "imageable_type": "books", "title": "Return of the King", "uri": "http://upload.wikimedia.org/wikipedia/en/8/89/ReturnOfTheKing.JPG" },
+    { "id": 8, "imageable_id": 4, "imageable_type": "books", "title": "Harry Potter and the Philosopher's Stone", "uri": "http://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg" },
+    { "id": 9, "imageable_id": 5, "imageable_type": "books", "title": "Harry Potter and the Chamber of Secrets", "uri": "http://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg" },
+    { "id": 10, "imageable_id": 6, "imageable_type": "books", "title": "Harry Potter and the Prisoner of Azkaban", "uri": "http://upload.wikimedia.org/wikipedia/en/a/a0/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg" },
+    { "id": 11, "imageable_id": 7, "imageable_type": "books", "title": "Harry Potter and the Goblet of Fire", "uri": "http://upload.wikimedia.org/wikipedia/en/c/c7/Harry_Potter_and_the_Goblet_of_Fire.jpg" },
+    { "id": 12, "imageable_id": 8, "imageable_type": "books", "title": "Harry Potter and the Order of the Phoenix", "uri": "http://upload.wikimedia.org/wikipedia/en/7/70/Harry_Potter_and_the_Order_of_the_Phoenix.jpg" },
+    { "id": 13, "imageable_id": 9, "imageable_type": "books", "title": "Harry Potter and the Half-Blood Prince", "uri": "http://upload.wikimedia.org/wikipedia/en/f/f0/Harry_Potter_and_the_Half-Blood_Prince.jpg" },
+    { "id": 14, "imageable_id": 10, "imageable_type": "books", "title": "Harry Potter and the Deathly Hallows", "uri": "http://upload.wikimedia.org/wikipedia/en/a/a9/Harry_Potter_and_the_Deathly_Hallows.jpg" },
+    { "id": 15, "imageable_id": 11, "imageable_type": "books", "title": "The Hobbit", "uri": "http://upload.wikimedia.org/wikipedia/en/4/4a/TheHobbit_FirstEdition.jpg" },
+    { "id": 16, "imageable_id": 1, "imageable_type": "series", "title": "Lord of the Rings", "uri": "http://img2.wikia.nocookie.net/__cb20130619012726/lotr/images/1/11/The_Lord_of_the_Rings_First_Copies.jpg" },
+    { "id": 17, "imageable_id": 2, "imageable_type": "series", "title": "Harry Potter", "uri": "http://upload.wikimedia.org/wikipedia/commons/6/6e/Harry_Potter_wordmark.svg" }
   ]
 }

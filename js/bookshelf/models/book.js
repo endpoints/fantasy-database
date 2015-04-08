@@ -7,5 +7,8 @@ module.exports = Bookshelf.Model.extend({
   },
   series: function () {
     return this.belongsTo(require('./series'));
+  },
+  photo: function () {
+    return this.morphMany(require('./photo'), 'imageable', 'Book');
   }
 });

@@ -1,7 +1,7 @@
 {
   "name": "fantasy-database",
   "description": "A database with a few fantasy books in it for testing query builders, orms, rest frameworks, etc.",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "homepage": "https://github.com/tkellen/fantasy-database",
   "author": {
     "name": "Tyler Kellen",
@@ -30,6 +30,6 @@
   "devDependencies": {
     "bookshelf": "0.7.9",
     "knex": "0.7.3",
-    "sqlite3": "3.0.4"
+    "sqlite3": "^3.0.5"
   }
 }

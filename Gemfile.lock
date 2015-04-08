@@ -1,8 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    sequel (4.17.0)
-    sequel-noinflectors (0.1.0)
+    sequel (4.21.0)
     sqlite3 (1.3.10)
 
 PLATFORMS
@@ -10,5 +9,5 @@ PLATFORMS
 
 DEPENDENCIES
   sequel
-  sequel-noinflectors
+  sequel_polymorphic
   sqlite3

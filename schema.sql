@@ -5,9 +5,20 @@ CREATE TABLE authors (
   date_of_death date
 );
 
+-- why on earth anyone would use polymorphic relations is beyond me.
+CREATE TABLE photos (
+  id integer PRIMARY KEY,
+  title text NOT NULL CHECK(title <> ''),
+  uri text NOT NULL CHECK(uri <> ''),
+  imageable_id integer NOT NULL,
+  imageable_type text NOT NULL CHECK (imageable_type <> '')
+);
+
+-- i've arbitrarily chosen this to be the hasOne example of polymorphic rels
 CREATE TABLE series (
   id integer PRIMARY KEY,
-  title text NOT NULL CHECK(title <> '')
+  title text NOT NULL CHECK(title <> ''),
+  photo_id int NOT NULL REFERENCES photo(id)
 );
 
 CREATE TABLE books (
