@@ -1,4 +1,6 @@
 
+from datetime import datetime
+
 
 def translate_fixture(data):
     """
@@ -10,6 +12,8 @@ def translate_fixture(data):
         results.append({
             'pk': author['id'], 'model': 'fantasy.author',
             'fields': {
+                'created_at': datetime.now().isoformat(),
+                'updated_at': datetime.now().isoformat(),
                 'name': author['name'],
                 'date_of_birth': author['date_of_birth'],
                 'date_of_death': author['date_of_death'],
@@ -20,6 +24,8 @@ def translate_fixture(data):
         results.append({
             'pk': series['id'], 'model': 'fantasy.series',
             'fields': {
+                'created_at': datetime.now().isoformat(),
+                'updated_at': datetime.now().isoformat(),
                 'title': series['title'],
             }
         })
@@ -28,6 +34,8 @@ def translate_fixture(data):
         results.append({
             'pk': book['id'], 'model': 'fantasy.book',
             'fields': {
+                'created_at': datetime.now().isoformat(),
+                'updated_at': datetime.now().isoformat(),
                 'series': book['series_id'],
                 'author': book['author_id'],
                 'title': book['title'],
@@ -39,6 +47,8 @@ def translate_fixture(data):
         results.append({
             'pk': chapter['id'], 'model': 'fantasy.chapter',
             'fields': {
+                'created_at': datetime.now().isoformat(),
+                'updated_at': datetime.now().isoformat(),
                 'title': chapter['title'],
                 'book': chapter['book_id'],
                 'ordering': chapter['ordering'],
@@ -49,6 +59,8 @@ def translate_fixture(data):
         results.append({
             'pk': store['id'], 'model': 'fantasy.store',
             'fields': {
+                'created_at': datetime.now().isoformat(),
+                'updated_at': datetime.now().isoformat(),
                 'name': store['name'],
                 'books': [sb['book_id'] for sb in data['books_stores'] if sb['store_id'] == store['id']],
             }
@@ -64,6 +76,8 @@ def translate_fixture(data):
         results.append({
             'pk': photo['id'], 'model': 'fantasy.photo',
             'fields': {
+                'created_at': datetime.now().isoformat(),
+                'updated_at': datetime.now().isoformat(),
                 'imageable_id': photo['imageable_id'],
                 'imageable_type': types_map[photo['imageable_type']],
                 'title': photo['title'],
