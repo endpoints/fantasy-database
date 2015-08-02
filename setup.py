@@ -4,6 +4,7 @@ import json
 from setuptools import setup, find_packages
 from setuptools.command.develop import develop
 from setuptools.command.install import install
+from setuptools.command.test import test
 
 
 README = open(os.path.join(os.path.dirname(__file__), 'django/README.md')).read()
@@ -43,6 +44,31 @@ class Install(install):
         build_fixture()
 
 
+class Test(test):
+    user_options = [
+        ('test-labels=', 'l', "Test labels to pass to runner.py test"),
+        ('djtest-args=', 'a', "Arguments to pass to runner.py test"),
+    ]
+
+    def initialize_options(self):
+        test.initialize_options(self)
+        self.test_labels = 'tests'
+        self.djtest_args = ''
+
+    def finalize_options(self):
+        test.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        from tests.runner import main
+        build_fixture()
+
+        test_labels = self.test_labels.split()
+        djtest_args = self.djtest_args.split()
+        main(['runner.py', 'test'] + test_labels + djtest_args)
+
+
 setup(
     name='fantasy-database',
     version='2.0.0',
@@ -55,9 +81,12 @@ setup(
     package_dir={'': 'django'},
     packages=find_packages(),
 
+    tests_require=['django>=1.7'],
+
     cmdclass={
         'develop': Develop,
         'install': Install,
+        'test': Test,
     },
 
     classifiers=[
