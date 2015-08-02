@@ -3,6 +3,9 @@
 
 > A database with a few fantasy books in it for testing query builders, orms, rest frameworks, etc.
 
+
+## Django
+
 This test app for Django provides models, migrations, and fixtures that implement the fantasy-database. It's
 recommended that app installation be limited to testing only.
 
@@ -17,7 +20,7 @@ TESTING = len(sys.argv) > 1 and sys.argv[1] in ('test', 'testserver')
 
 if TESTING:
     INSTALLED_APPS += (
-        'fantasy',
+        'django_fantasy',
     )
 
 ...

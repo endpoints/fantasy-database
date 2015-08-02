@@ -6,25 +6,25 @@ from setuptools.command.build_py import build_py
 from setuptools.command.test import test
 
 
-README = open(os.path.join(os.path.dirname(__file__), 'django/README.md')).read()
+README = open(os.path.join(os.path.dirname(__file__), 'python/README.md')).read()
 
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-# append the django directory to our path so we can import utils
+# append the python directory to our path so we can import utils
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.join(BASE_DIR, 'django'))
+sys.path.append(os.path.join(BASE_DIR, 'python'))
 
 
 def build_fixture(input_path, output_path):
-    from utils import translate_fixture
+    from utils import translate_django_fixture
 
     contents = None
     with open(input_path) as infile:
         contents = json.loads(infile.read())
         print BASE_DIR
 
-    contents = translate_fixture(contents)
+    contents = translate_django_fixture(contents)
 
     with open(output_path, 'w') as outfile:
         outfile.write(json.dumps(contents))
@@ -37,7 +37,7 @@ class BuildPy(build_py):
     def run(self):
         # honor the --dry-run flag
         if not self.dry_run:
-            target_dir = os.path.join(self.build_lib, 'fantasy/fixtures')
+            target_dir = os.path.join(self.build_lib, 'django_fantasy/fixtures')
 
             # mkpath is a distutils helper to create directories
             self.mkpath(target_dir)
@@ -72,7 +72,7 @@ class Test(test):
 
         # We still need to build the fixture manually during test, since
         # setuptools runs tests on PY2 'in place'.
-        target_dir = os.path.join(BASE_DIR, 'django/fantasy/fixtures')
+        target_dir = os.path.join(BASE_DIR, 'python/django_fantasy/fixtures')
         build_fixture(
             os.path.join(BASE_DIR, 'data.json'),
             os.path.join(target_dir, 'fantasy-database.json')
@@ -93,8 +93,8 @@ setup(
     url='https://github.com/tkellen/fantasy-database',
     author='Tyler Kellen',
     author_email='tyler@sleekcode.net',
-    package_dir={'': 'django'},
-    packages=find_packages('django', exclude=['tests']),
+    package_dir={'': 'python'},
+    packages=find_packages('python', exclude=['tests']),
 
     tests_require=['django>=1.7'],
 

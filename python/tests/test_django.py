@@ -1,6 +1,6 @@
 
 from django.test import TestCase
-from fantasy import models
+from django_fantasy import models
 
 
 class FixtureTest(TestCase):

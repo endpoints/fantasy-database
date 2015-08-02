@@ -6,11 +6,11 @@ import glob
 base = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 
 # add test eggs to path
-eggs = os.path.join(base, ".eggs/*.egg")
+eggs = os.path.join(base, "*.egg")
 sys.path += glob.glob(eggs)
 
 # also add parent directory to path (to find tests)
-pkg_base = os.path.join(base, 'django')
+pkg_base = os.path.join(base, 'python')
 sys.path.append(pkg_base)
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'tests.settings'

@@ -1,14 +1,37 @@
 
-from datetime import datetime
-from django.utils import timezone
+from datetime import datetime, timedelta, tzinfo
 
 
-def translate_fixture(data):
+# copied from django.utils.timezone
+ZERO = timedelta(0)
+
+
+class UTC(tzinfo):
+    """
+    UTC implementation taken from Python's docs.
+    Used only when pytz isn't available.
+    """
+
+    def __repr__(self):
+        return "<UTC>"
+
+    def utcoffset(self, dt):
+        return ZERO
+
+    def tzname(self, dt):
+        return "UTC"
+
+    def dst(self, dt):
+        return ZERO
+
+
+def translate_django_fixture(data):
     """
     Translate the contents of the `data.json` file into a django compatible fixture.
     """
+
     results = []
-    now = datetime.now().replace(tzinfo=timezone.UTC()).isoformat()
+    now = datetime.now().replace(tzinfo=UTC()).isoformat()
 
     for author in data['authors']:
         results.append({
