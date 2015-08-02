@@ -2,8 +2,7 @@ import os
 import sys
 import json
 from setuptools import setup, find_packages
-from setuptools.command.develop import develop
-from setuptools.command.install import install
+from setuptools.command.build_py import build_py
 from setuptools.command.test import test
 
 
@@ -17,31 +16,39 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(BASE_DIR, 'django'))
 
 
-def build_fixture():
+def build_fixture(input_path, output_path):
     from utils import translate_fixture
 
     contents = None
-    with open(os.path.join(BASE_DIR, 'data.json')) as f:
-        contents = json.loads(f.read())
+    with open(input_path) as infile:
+        contents = json.loads(infile.read())
+        print BASE_DIR
 
     contents = translate_fixture(contents)
 
-    with open(os.path.join(BASE_DIR, 'django/fantasy/fixtures/fantasy-database.json'), 'w') as f:
-        f.write(json.dumps(contents))
+    with open(output_path, 'w') as outfile:
+        outfile.write(json.dumps(contents))
 
 
-class Develop(develop):
+class BuildPy(build_py):
 
+    # adapted from:
+    # http://www.digip.org/blog/2011/01/generating-data-files-in-setup.py.html
     def run(self):
-        develop.run(self)
-        build_fixture()
+        # honor the --dry-run flag
+        if not self.dry_run:
+            target_dir = os.path.join(self.build_lib, 'fantasy/fixtures')
 
+            # mkpath is a distutils helper to create directories
+            self.mkpath(target_dir)
 
-class Install(install):
+            input_path = os.path.join(BASE_DIR, 'data.json')
+            output_path = os.path.join(target_dir, 'fantasy-database.json')
 
-    def run(self):
-        install.run(self)
-        build_fixture()
+            build_fixture(input_path, output_path)
+
+        # distutils uses old-style classes, so no super()
+        build_py.run(self)
 
 
 class Test(test):
@@ -62,7 +69,14 @@ class Test(test):
 
     def run_tests(self):
         from tests.runner import main
-        build_fixture()
+
+        # We still need to build the fixture manually during test, since
+        # setuptools runs tests on PY2 'in place'.
+        target_dir = os.path.join(BASE_DIR, 'django/fantasy/fixtures')
+        build_fixture(
+            os.path.join(BASE_DIR, 'data.json'),
+            os.path.join(target_dir, 'fantasy-database.json')
+        )
 
         test_labels = self.test_labels.split()
         djtest_args = self.djtest_args.split()
@@ -78,14 +92,14 @@ setup(
     long_description=README,
     url='https://github.com/tkellen/fantasy-database',
     author='Tyler Kellen',
+    author_email='tyler@sleekcode.net',
     package_dir={'': 'django'},
-    packages=find_packages(),
+    packages=find_packages('django', exclude=['tests']),
 
     tests_require=['django>=1.7'],
 
     cmdclass={
-        'develop': Develop,
-        'install': Install,
+        'build_py': BuildPy,
         'test': Test,
     },
 
