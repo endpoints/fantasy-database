@@ -72,7 +72,7 @@ class Test(test):
 setup(
     name='fantasy-database',
     version='2.0.0',
-    license='BSD License',
+    license='MIT',
 
     description='A database with a few fantasy books in it for testing query builders, orms, rest frameworks, etc.',
     long_description=README,
@@ -94,7 +94,7 @@ setup(
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
