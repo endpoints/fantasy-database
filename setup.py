@@ -71,7 +71,7 @@ class Test(test):
 
 setup(
     name='fantasy-database',
-    version='2.0.0',
+    version='2.0.1',
     license='MIT',
 
     description='A database with a few fantasy books in it for testing query builders, orms, rest frameworks, etc.',
