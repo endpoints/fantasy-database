@@ -21,3 +21,6 @@ INSTALLED_APPS = (
 
 
 ROOT_URLCONF = 'tests.urls'
+
+
+USE_TZ = True
