@@ -31,6 +31,7 @@ setup(
     author='Tyler Kellen',
     author_email='tyler@sleekcode.net',
     package_dir={'': 'python'},
+    py_modules=['setup_commands', 'utils'],
     packages=find_packages('python', exclude=['tests']),
 
     tests_require=['django>=1.7'],
