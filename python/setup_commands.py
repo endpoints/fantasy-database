@@ -61,7 +61,9 @@ class Test(test):
     # This is almost a direct copy of the original method. The difference is
     # that this method only performs a non-'inplace' build.
     def with_project_on_sys_path(self, func):
-        from pkg_resources import *
+        from pkg_resources import (
+            normalize_path, working_set, add_activation_listener, require
+        )
 
         # Ensure metadata is up-to-date
         self.reinitialize_command('build_py', inplace=0)
