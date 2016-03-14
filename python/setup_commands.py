@@ -14,7 +14,6 @@ def build_fixture(input_path, output_path):
     contents = None
     with open(input_path) as infile:
         contents = json.loads(infile.read())
-        print BASE_DIR
 
     contents = translate_django_fixture(contents)
 

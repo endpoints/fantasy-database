@@ -22,7 +22,7 @@ Test, BuildPy = get_commands()
 
 setup(
     name='fantasy-database',
-    version='2.0.3',
+    version='2.0.3-post.1',
     license='MIT',
 
     description='A database with a few fantasy books in it for testing query builders, orms, rest frameworks, etc.',
