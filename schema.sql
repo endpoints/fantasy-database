@@ -22,7 +22,7 @@ CREATE TABLE photos (
 CREATE TABLE series (
   id integer PRIMARY KEY,
   title text NOT NULL CHECK(title <> ''),
-  photo_id int NOT NULL REFERENCES photo(id),
+  photo_id int NOT NULL REFERENCES photos(id),
   created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at timestamp
 );
