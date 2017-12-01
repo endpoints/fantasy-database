@@ -1,2 +1,22 @@
 node_modules
 .log
+*.pyc
+
+# Python Distribution / packaging
+.Python
+env/
+.env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg

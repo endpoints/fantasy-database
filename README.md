@@ -10,3 +10,6 @@ If you are a node user, running `npm install && npm start` will rebuild the SQLi
 Make this repository a dependency of your project and automate the process of copying `fantasy.db` into your testing harness.
 
 Because this repository is meant to be used by multiple programming languages, there are no affordances for auto-migrating your database (PRs welcome!). Use [schema.sql](https://github.com/endpoints/fantasy-database/blob/master/schema.sql) as a reference for building migrations, and [data.json](https://github.com/endpoints/fantasy-database/blob/master/data.json) for seeding if you'd like to test in something other than SQLite.
+
+#### Usage notes
+- [Python](python)
