@@ -29,7 +29,7 @@
   ],
   "devDependencies": {
     "bookshelf": "0.7.9",
-    "knex": "0.7.3",
+    "knex": "0.19.5",
     "sqlite3": "^3.0.5"
   }
 }
